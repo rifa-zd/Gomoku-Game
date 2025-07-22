@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&family=Flavors&display=swap');
+
+*{
+    margin: 0;padding: 0;
+}
+body{
+    /* height: 90vh; */
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+} 
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.title h1{    font-family: "Baloo Paaji 2", serif;}
+
+#info{
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    background-color: #89FC00;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 13px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2px;
+    
+}
+
+#info:hover{
+    width: 28px; height: 28px;
+    font-size: 22px;
+    background-color: #7DCF31;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#play {
+    display: none; 
+    position: absolute;
+    top: calc(100% + 5px); 
+    left: 0;
+    z-index: 100;
+    flex-direction: column;
+    margin-top: 13%;
+}
+
+
+#play::after{
+    content: " ";
+    position: absolute;
+    left: 13px;
+    top: -12px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #a6e45a;
+}
+
+.manual{
+    background-color: #a6e45a;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+
+.close{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 20px; height: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    color: #FF0022;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    padding-left: 1px;
+}
+
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score{
+    font-family: "Baloo Paaji 2", serif;
+    font-size: 1.2em;
+    position: absolute;
+    padding: 0 0 0 5px;
+    bottom: -12%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 1.2%;
+    border: 1px solid #B89E97;
+    background-color: #F5FBEF;
+}
+
+#player1Score, #player2Score {    margin: 0 10px;}
+
+#resetBtn {
+    /* right: 0; */
+    margin-left: 50px;
+    padding: 5px;
+    background-color: #89FC00;
+    color: black;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+#resetBtn:hover {
+    background-color: #7DCF31;
+    color: white;
+    border: none;
+}
+
+.grid_box{
+    position: relative;
+    margin: auto;
+    margin-top: 2%;
+    display: grid;
+    padding: 4px;
+    /* background-color: #95A3A4; */
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 3px;
+    max-width: 450px;
+}
+
+.cell{
+    margin-left: 9px;
+    width: 40px; height: 40px;
+    background-color: #F2E8CF;
+    border: 1px solid #B8BDB5;
+    cursor: pointer;
+}
+
+.cell.win {
+    background-color: #ffea80;
+}
+
+#winmsg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 45%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    font-family: "Baloo Paaji 2", serif;    
+}
+.imgbox img{  
+    width: 10vw;
+    transition: width 1s ease-in;
+}
+
+.ball{
+    background-color: #D11149;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 18%;
+}
+
+#turnDome{
+    width: 0;
+    height: 20vw;
+    border-radius: 0 10vw 10vw 0;
+    border: 3px solid white;
+    border-left: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    transition: width 0.5s ease, background-color 0.5s ease;
+    /* visibility: hidden; */
+}
+
+#turn_text{
+    /* display: none; */
+    font-size: 0;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) rotate(90deg); 
+    white-space: nowrap;
+}
+

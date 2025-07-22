@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gomuko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="title">
+        <h1>Gomuko</h1>
+        <div class="dropdown">
+            <p id="info">?</p>
+            <div id="play">
+                <div class="manual">
+                    <h2>How to Play</h2>
+                    <p style="margin-top: 4px;">Gomuko (Five in a Row) is a game where players take turns placing their marks (Player 1, Player 2) on the grid. The first player to align five marks horizontally, vertically, or diagonally wins the game.</p>
+                    <button class="close" onclick="closeManual()">X</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="content">
+        <div class="grid_box" id="gridBox"></div>
+        <div class="score">
+            Player 1 : <p id="player1Score">0/0</p> 
+            Player 2 : <p id="player2Score">0/0</p>
+            <div id="resetBtn"  onclick="reset()">Reset Game</div>
+        </div>
+    </div>
+    <div id="turnDome"></div>
+
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
